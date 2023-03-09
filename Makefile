@@ -46,7 +46,6 @@ $(LIBFT):
 clean:
 	@rm -f $(OBJS)
 	@make -C $(LIBFTPATH) clean
-	@echo "objects deleted"
 
 fclean: clean
 	@rm -f $(NAME)
