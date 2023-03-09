@@ -29,26 +29,15 @@ int	ft_printchar(int c)
 	return (1);
 }
 
-int	ft_printnbr(int n)
+int ft_printnum(int n)
 {
-	int	len;
+    int     i;
+    char    *num;
 
-	len = 0;
-	if (n == -2147483648)
-	{
-		write(1, "-2147483648", 11);
-		return (11);
-	}
-	if (n < 0)
-	{
-		write(1, "-", 1);
-		n *= -1;
-		len++;
-	}
-	if (n >= 10)
-		len += ft_printnbr(n / 10);
-	ft_putchar_fd(n % 10 + '0', 1);
-	return (len + 1);
+    num = ft_itoa(n);
+    i = ft_printstr(num);
+    free(num);
+    return (i);
 }
 
 int	ft_printpercent(void)

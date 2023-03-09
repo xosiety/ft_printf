@@ -6,7 +6,7 @@
 /*   By: afabbri <afabbri@student.42roma.it>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 13:52:06 by afabbri           #+#    #+#             */
-/*   Updated: 2023/03/07 13:56:27 by afabbri          ###   ########.fr       */
+/*   Updated: 2023/03/09 13:03:52 by afabbri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,22 +25,30 @@ static int	ft_getlen(unsigned int n)
 	return (len);
 }
 
-static void	*ft_gethex(unsigned int n, char format)
+static void	*ft_gethex(unsigned int nb, char format)
 {
-	if (n >= 16)
-		ft_gethex(n / 16, format);
-	if (n % 16 < 10)
-		ft_putchar_fd(n % 16 + '0', 1);
-	else if (format == 0)
-		ft_putchar_fd(n % 16 + 'a' - 10, 1);
-	else
-		ft_putchar_fd(n % 16 + 'A' - 10, 1);
+    if (nb >= 16)
+    {
+        ft_gethex(nb /16, format);
+        ft_gethex(nb % 16, format);
+    }
+    else if (nb > 9)
+    {
+        if (format == 'x')
+            ft_putchar_fd((nb - 10 + 'a'), 1);
+        if (format == 'X')
+            ft_putchar_fd((nb - 10 + 'A'), 1);
+    }
+    else
+        ft_putchar_fd((nb + '0'), 1);
+    return (0);
 }
 
-int	ft_printhex(unsigned int n, char format)
+int ft_printhex(unsigned int nb, char format)
 {
-	if (n == 0)
-		return (ft_putchar_fd('0', 1));
-	ft_gethex(n, format);
-	return (ft_getlen(n));
+    if (nb == 0)
+        return (write(1, "0", 1));
+    else
+        ft_gethex(nb, format);
+    return (ft_getlen(nb));
 }

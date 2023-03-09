@@ -6,7 +6,7 @@
 /*   By: afabbri <afabbri@student.42roma.it>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 13:55:46 by afabbri           #+#    #+#             */
-/*   Updated: 2023/03/07 13:59:43 by afabbri          ###   ########.fr       */
+/*   Updated: 2023/03/09 13:08:19 by afabbri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,11 +37,18 @@ static void	ft_putptr(unsigned long n)
 
 int	ft_printptr(void *ptr)
 {
-	unsigned long	n;
+    unsigned long long  j;
+    int                 i;
 
-	n = (unsigned long)ptr;
-	if (n == 0)
-		return (ft_putchar_fd('0', 1));
-	ft_putptr(n);
-	return (ft_ptrlen(n));
+    i = 0;
+    j = (unsigned long long) ptr;
+    i += write(1, "0x", 2);
+    if (ptr == 0)
+        i += write(1, "0", 1);
+    else
+    {
+        ft_putptr(j);
+        i += ft_ptrlen(j);
+    }
+    return (i);
 }
