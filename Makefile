@@ -6,7 +6,7 @@
 #    By: afabbri <afabbri@student.42roma.it>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/07 14:10:04 by afabbri           #+#    #+#              #
-#    Updated: 2023/03/13 15:41:08 by afabbri          ###   ########.fr        #
+#    Updated: 2023/03/13 15:47:31 by afabbri          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ SRCS		= ft_printf.c \
 			  ft_printhex.c \
 			  ft_printptr.c \
 			  ft_unsignedprint.c\
-			  ft_printf_utils.c \
+			  ft_printf_utilis.c \
 
 OBJS		= $(SRCS:%.c=%.o)
 
