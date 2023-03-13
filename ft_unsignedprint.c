@@ -6,7 +6,7 @@
 /*   By: afabbri <afabbri@student.42roma.it>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 13:52:24 by afabbri           #+#    #+#             */
-/*   Updated: 2023/03/13 14:06:27 by afabbri          ###   ########.fr       */
+/*   Updated: 2023/03/13 14:59:39 by afabbri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,16 +30,15 @@ static char	*ft_getitoa_unsigned(unsigned int n)
 	char	*str;
 	int		i;
 
-	str = NULL;
-	i = ft_getunsigned(nb);
+	i = ft_getunsigned(n);
 	str = malloc(sizeof(char) * (i + 1));
 	if (!str)
-		return (NULL);
+		return (0);
 	str[i--] = '\0';
-	while (nb > 0)
+	while (n > 0)
 	{
-		str[i--] = nb % 10 + '0';
-		nb = nb / 10;
+		str[i--] = n % 10 + '0';
+		n /= 10;
 	}
 	return (str);
 }
