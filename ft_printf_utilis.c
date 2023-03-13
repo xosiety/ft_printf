@@ -6,9 +6,13 @@
 /*   By: afabbri <afabbri@student.42roma.it>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 13:51:43 by afabbri           #+#    #+#             */
-/*   Updated: 2023/03/13 14:02:33 by afabbri          ###   ########.fr       */
+/*   Updated: 2023/03/13 15:59:17 by afabbri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <unistd.h>
+#include <stdarg.h>
+#include "../libft/libft.h"
 
 int	ft_printstr(char *str)
 {
