@@ -6,7 +6,7 @@
 /*   By: afabbri <afabbri@student.42roma.it>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 13:51:43 by afabbri           #+#    #+#             */
-/*   Updated: 2023/03/07 13:59:43 by afabbri          ###   ########.fr       */
+/*   Updated: 2023/03/13 14:02:33 by afabbri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,15 +29,15 @@ int	ft_printchar(int c)
 	return (1);
 }
 
-int ft_printnum(int n)
+int	ft_printnum(int n)
 {
-    int     i;
-    char    *num;
+	int		i;
+	char	*num;
 
-    num = ft_itoa(n);
-    i = ft_printstr(num);
-    free(num);
-    return (i);
+	num = ft_itoa(n);
+	i = ft_printstr(num);
+	free(num);
+	return (i);
 }
 
 int	ft_printpercent(void)
