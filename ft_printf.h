@@ -6,15 +6,16 @@
 /*   By: afabbri <afabbri@student.42roma.it>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 13:51:57 by afabbri           #+#    #+#             */
-/*   Updated: 2023/03/13 14:47:54 by afabbri          ###   ########.fr       */
+/*   Updated: 2023/03/13 15:59:08 by afabbri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
 
-# include "../libft/libft.h"
 # include <stdarg.h>
+# include <unistd.h>
+# include "../libft/libft.h"
 
 int		ft_printf(const char *format, ...);
 int		ft_printpercent(void);
