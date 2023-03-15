@@ -6,13 +6,13 @@
 /*   By: afabbri <afabbri@student.42roma.it>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 13:51:43 by afabbri           #+#    #+#             */
-/*   Updated: 2023/03/13 15:59:17 by afabbri          ###   ########.fr       */
+/*   Updated: 2023/03/15 13:45:46 by afabbri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 #include <stdarg.h>
-#include "../libft/libft.h"
+#include "libft/libft.h"
 
 int	ft_printstr(char *str)
 {
@@ -33,7 +33,7 @@ int	ft_printchar(int c)
 	return (1);
 }
 
-int	ft_printnum(int n)
+int	ft_printnbr(int n)
 {
 	int		i;
 	char	*num;

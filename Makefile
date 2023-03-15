@@ -6,11 +6,11 @@
 #    By: afabbri <afabbri@student.42roma.it>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/07 14:10:04 by afabbri           #+#    #+#              #
-#    Updated: 2023/03/13 15:47:31 by afabbri          ###   ########.fr        #
+#    Updated: 2023/03/15 13:12:58 by afabbri          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	=	printf.a
+NAME	=	libftprintf.a
 
 FLAGS		= -Wall -Werror -Wextra
 
@@ -22,7 +22,7 @@ SRCS		= ft_printf.c \
 
 OBJS		= $(SRCS:%.c=%.o)
 
-LIBFTPATH	= ../libft
+LIBFTPATH	= ./libft
 
 LIBFT		= libft.a
 

@@ -6,7 +6,7 @@
 /*   By: afabbri <afabbri@student.42roma.it>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 13:51:49 by afabbri           #+#    #+#             */
-/*   Updated: 2023/03/13 14:07:22 by afabbri          ###   ########.fr       */
+/*   Updated: 2023/03/15 14:17:20 by afabbri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	ft_printchar(int c)
 	return (1);
 }
 
-int	ft_formats(va_list args, char format)
+int	ft_format(va_list args, char format)
 {
 	int	print_lenght;
 
@@ -54,7 +54,7 @@ int	ft_printf(const char *str, ...)
 		if (str[i] == '%')
 		{
 			i++;
-			print_lenght += ft_formats(args, str[i]);
+			print_lenght += ft_format(args, str[i]);
 		}
 		else
 			print_lenght += ft_printchar(str[i]);
