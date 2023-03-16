@@ -6,7 +6,7 @@
 /*   By: afabbri <afabbri@student.42roma.it>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 13:51:43 by afabbri           #+#    #+#             */
-/*   Updated: 2023/03/16 17:02:44 by afabbri          ###   ########.fr       */
+/*   Updated: 2023/03/16 17:35:31 by afabbri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,22 +18,18 @@ int	ft_printstr(char *str)
 	int	i;
 
 	i = 0;
-
 	if (!str)
-    {
-        write(1, "(null)", 6);
-        return (6);
-    }
-
-    while (str[i])
+	{
+		write(1, "(null)", 6);
+		return (6);
+	}
+	while (str[i])
 	{
 		write(1, &str[i], 1);
 		i++;
 	}
-
 	return (i);
 }
-
 
 int	ft_printnbr(int n)
 {

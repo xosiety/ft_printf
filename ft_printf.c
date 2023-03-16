@@ -6,7 +6,7 @@
 /*   By: afabbri <afabbri@student.42roma.it>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 13:51:49 by afabbri           #+#    #+#             */
-/*   Updated: 2023/03/15 14:39:05 by afabbri          ###   ########.fr       */
+/*   Updated: 2023/03/16 17:37:04 by afabbri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,13 +20,13 @@ int	ft_printchar(int c)
 
 int	ft_format(va_list args, char format)
 {
-    	int	print_lenght;
+	int	print_lenght;
 
 	print_lenght = 0;
 	if (format == 'c')
 		print_lenght += ft_printchar(va_arg(args, int));
 	else if (format == 's')
-   		print_lenght += ft_printstr(va_arg(args, char *));
+		print_lenght += ft_printstr(va_arg(args, char *));
 	else if (format == 'd')
 		print_lenght += ft_printnbr(va_arg(args, int));
 	else if (format == 'i')
