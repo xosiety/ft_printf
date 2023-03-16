@@ -14,44 +14,43 @@
 
 static int	ft_getunsigned(unsigned int n)
 {
-	int	len;
+    int	len;
 
-	len = 1;
-	while (n >= 10)
-	{
-		n /= 10;
-		len++;
-	}
-	return (len);
+    len = 1;
+    while (n >= 10)
+    {
+        n /= 10;
+        len++;
+    }
+    return (len);
 }
 
 static char	*ft_getitoa_unsigned(unsigned int n)
 {
-	char	*str;
-	int		i;
+    char	*num;
+    int		len;
 
-	i = ft_getunsigned(n);
-	str = malloc(sizeof(char) * (i + 1));
-	if (!str)
-		return (0);
-	str[i--] = '\0';
-	while (n > 0)
-	{
-		str[i--] = n % 10 + '0';
-		n /= 10;
-	}
-	return (str);
+    len = ft_getunsigned(n);
+    num = malloc(sizeof(char) * (len + 1));
+    if (!num)
+        return (0);
+    num[len] = '\0';
+    while (len--)
+    {
+        num[len] = n % 10 + '0';
+        n /= 10;
+    }
+    return (num);
 }
 
-int	ft_printunsigned(unsigned int n)
+int	ft_unsignedprint(unsigned int n)
 {
-	int		len;
-	char	*num;
+    char	*num;
+    int		len;
 
-	if (n == 0)
-		return (write(1, "0", 1));
-	num = ft_getitoa_unsigned(n);
-	len = ft_printstr(num);
-	free(num);
-	return (len);
+    num = ft_getitoa_unsigned(n);
+    len = ft_getunsigned(n);
+    write(1, num, len);
+    free(num);
+    return (len);
 }

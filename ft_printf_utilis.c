@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include <unistd.h>
-#include <stdarg.h>
 #include "libft/libft.h"
 
 int	ft_printstr(char *str)
@@ -27,11 +26,6 @@ int	ft_printstr(char *str)
 	return (i);
 }
 
-int	ft_printchar(int c)
-{
-	write(1, &c, 1);
-	return (1);
-}
 
 int	ft_printnbr(int n)
 {

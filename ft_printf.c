@@ -6,7 +6,7 @@
 /*   By: afabbri <afabbri@student.42roma.it>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 13:51:49 by afabbri           #+#    #+#             */
-/*   Updated: 2023/03/15 14:17:20 by afabbri          ###   ########.fr       */
+/*   Updated: 2023/03/15 14:39:05 by afabbri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,23 +20,27 @@ int	ft_printchar(int c)
 
 int	ft_format(va_list args, char format)
 {
-	int	print_lenght;
+    	int	print_lenght;
 
 	print_lenght = 0;
 	if (format == 'c')
 		print_lenght += ft_printchar(va_arg(args, int));
 	else if (format == 's')
-		print_lenght += ft_printstr(va_arg(args, char *));
-	else if (format == 'p')
-		print_lenght += ft_printptr(va_arg(args, void *));
-	else if (format == 'd' || format == 'i')
+   		print_lenght += ft_printstr(va_arg(args, char *));
+	else if (format == 'd')
 		print_lenght += ft_printnbr(va_arg(args, int));
-	else if (format == 'u')
-		print_lenght += ft_unsignedprint(va_arg(args, unsigned int));
-	else if (format == 'x' || format == 'X')
-		print_lenght += ft_printhex(va_arg(args, unsigned int), format);
+	else if (format == 'i')
+		print_lenght += ft_printnbr(va_arg(args, int));
 	else if (format == '%')
 		print_lenght += ft_printpercent();
+	else if (format == 'p')
+		print_lenght += ft_printptr(va_arg(args, void *));
+	else if (format == 'u')
+		print_lenght += ft_unsignedprint(va_arg(args, unsigned int));
+	else if (format == 'x')
+		print_lenght += ft_printhex(va_arg(args, unsigned int), 'x');
+	else if (format == 'X')
+		print_lenght += ft_printhex(va_arg(args, unsigned int), 'X');
 	return (print_lenght);
 }
 
