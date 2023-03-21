@@ -17,7 +17,7 @@ FLAGS		= -Wall -Werror -Wextra
 SRCS		= ft_printf.c \
 			  ft_printhex.c \
 			  ft_printptr.c \
-			  ft_unsignedprint.c\
+			  ft_unsignedprint.c \
 			  ft_printf_utilis.c \
 
 OBJS		= $(SRCS:%.c=%.o)
